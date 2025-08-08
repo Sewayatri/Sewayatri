@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SewaYatri — Final (Single File)</title>
+  <meta name="description" content="SewaYatri — Local electrician & plumber booking (Buxar & nearby villages). Cash & online payments." />
+  <style>
+    :root{
+      --accent:#0b74db;--muted:#6b7280;--card:#ffffff;--bg:#f3f4f6;--radius:14px;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}html,body{height:100%;margin:0;background:#f8fafc;color:#0f172a}
+    .container{max-width:980px;margin:0 auto;padding:20px}
+    header{display:flex;gap:16px;align-items:center;justify-content:space-between}
+    .logo{display:flex;align-items:center;gap:12px}
+    .logo svg{width:50px;height:50px}
+    h1{font-size:20px;margin:0}p.lead{margin:2px 0 0;color:var(--muted)}
+    nav{position:relative}
+    .menu-btn{background:none;border:none;font-size:24px;cursor:pointer}
+    .dropdown{display:none;position:absolute;right:0;top:30px;background:var(--card);border-radius:var(--radius);box-shadow:0 4px 12px rgba(0,0,0,0.1);overflow:hidden}
+    .dropdown a{display:block;padding:10px 16px;color:#0f172a;text-decoration:none;font-size:14px}
+    .dropdown a:hover{background:#f3f4f6}
+    .grid{display:grid;grid-template-columns:1fr 380px;gap:18px;margin-top:18px}
+    @media(max-width:880px){.grid{grid-template-columns:1fr}}
+    .card{background:var(--card);border-radius:var(--radius);padding:18px;box-shadow:0 6px 20px rgba(12,15,20,0.06)}
+    .services{display:flex;flex-direction:column;gap:12px}
+    .svc{display:flex;align-items:center;gap:12px;padding:10px;border-radius:10px;border:1px solid #eef2f5}
+    .svc h3{margin:0;font-size:16px}
+    .areas{font-size:14px;color:var(--muted);margin-top:8px}
+    form label{font-size:13px;color:var(--muted);display:block;margin-bottom:6px}
+    input,select,textarea{width:100%;padding:10px;border-radius:10px;border:1px solid #e6edf3;font-size:14px}
+    button{background:var(--accent);color:#fff;border:0;padding:10px 14px;border-radius:10px;font-weight:600;cursor:pointer}
+    .small{font-size:13px;color:var(--muted)}
+    footer{margin-top:18px;text-align:center;color:var(--muted);font-size:13px}
+    .modal-backdrop{position:fixed;inset:0;background:rgba(2,6,23,0.46);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:all .18s}
+    .modal{background:var(--card);padding:18px;border-radius:14px;max-width:480px;width:92%}
+    .modal-backdrop.show{opacity:1;pointer-events:auto}
+    .toast{position:fixed;right:18px;bottom:18px;background:#0b74db;color:#fff;padding:10px 14px;border-radius:10px;display:none}
+    .toast.show{display:block}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="10" fill="#0b74db"/><path d="M24 13c3 0 5.5 2.5 5.5 5.5S27 24 24 24s-5.5-2.5-5.5-5.5S21 13 24 13z" fill="#fff"/><path d="M14 34c2-4 6-7 10-7s8 3 10 7H14z" fill="#dbeafe"/></svg>
+        <div>
+          <h1>SewaYatri</h1>
+          <p class="lead">Electrician · Plumber — Buxar & nearby villages • Cash & Online</p>
+        </div>
+      </div>
+      <nav>
+        <button class="menu-btn" onclick="toggleMenu()">⋮</button>
+        <div class="dropdown" id="dropdownMenu">
+          <a href="#customer-login">Customer Login</a>
+          <a href="#service-provider-login">Service Provider Login</a>
+          <a href="#about">About</a>
+          <a href="#support">Support</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="grid">
+      <section>
+        <div class="card">
+          <h2>Hamare Services</h2>
+          <div class="services">
+            <div class="svc">🔌 <div><h3>Electrician</h3><div class="small">Wiring, switch repair, inverter, light fitting</div></div></div>
+            <div class="svc">🚰 <div><h3>Plumber</h3><div class="small">Leak fixing, taps, RO, bathroom fitting</div></div></div>
+          </div>
+          <div class="areas"><strong>Service Area:</strong> Sohani Patti, Buxar, Chausa, Itarhi, Bhojpur, Dumraon, Ahirauli, Rajpur, Sangraon.</div>
+        </div>
+      </section>
+
+      <aside>
+        <div class="card">
+          <h3>Book a Service</h3>
+          <form id="bookingForm" onsubmit="submitBooking(event)">
+            <label>Service</label>
+            <select id="serviceType" required>
+              <option value="">— Select —</option>
+              <option value="Electrician">Electrician</option>
+              <option value="Plumber">Plumber</option>
+            </select>
+            <label>Full name</label>
+            <input id="name" value="Ajit Raja" required />
+            <label>Mobile number</label>
+            <input id="phone" value="7667122857" pattern="[0-9]{10,13}" required />
+            <label>Address / Village</label>
+            <input id="address" required />
+            <button type="submit">Confirm Booking</button>
+          </form>
+        </div>
+        <div class="card">
+          <h4>Contact</h4>
+          <div class="small">Owner: Ajit Raja</div>
+          <div style="margin-top:8px;display:flex;gap:8px">
+            <a href="tel:+917667122857"><button style="background:#10b981">Call</button></a>
+            <a href="https://wa.me/917667122857" target="_blank"><button style="background:#25D366">WhatsApp</button></a>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <footer>© SewaYatri — Local service booking</footer>
+  </div>
+
+  <div id="modalBackdrop" class="modal-backdrop"><div class="modal"><h3>Confirm Booking</h3><button onclick="closeModal()">Close</button></div></div>
+  <div id="toast" class="toast">Booking placed</div>
+  <script>
+    function toggleMenu(){document.getElementById('dropdownMenu').style.display = document.getElementById('dropdownMenu').style.display==='block'?'none':'block'}
+    function el(id){return document.getElementById(id)}
+    function submitBooking(e){e.preventDefault();alert('Booking confirmed!')}
+    function closeModal(){el('modalBackdrop').classList.remove('show')}
+  </script>
+</body>
+</html>
