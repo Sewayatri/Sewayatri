@@ -76,7 +76,7 @@
       <aside>
         <div class="card">
           <h3>Book a Service</h3>
-          <form id="bookingForm" onsubmit="submitBooking(event)">
+          <form id="bookingForm" onsubmit="sendToWhatsApp(event)">
             <label>Service</label>
             <select id="serviceType" required>
               <option value="">— Select —</option>
@@ -84,11 +84,11 @@
               <option value="Plumber">Plumber</option>
             </select>
             <label>Full name</label>
-            <input id="name" value="Ajit Raja" required />
+            <input id="name" placeholder="Enter your name" autocomplete="off" required />
             <label>Mobile number</label>
-            <input id="phone" value="7667122857" pattern="[0-9]{10,13}" required />
+            <input id="phone" placeholder="Enter your mobile number" pattern="[0-9]{10,13}" autocomplete="off" required />
             <label>Address / Village</label>
-            <input id="address" required />
+            <input id="address" placeholder="Enter your address" autocomplete="off" required />
             <button type="submit">Confirm Booking</button>
           </form>
         </div>
@@ -106,13 +106,23 @@
     <footer>© SewaYatri — Local service booking</footer>
   </div>
 
-  <div id="modalBackdrop" class="modal-backdrop"><div class="modal"><h3>Confirm Booking</h3><button onclick="closeModal()">Close</button></div></div>
-  <div id="toast" class="toast">Booking placed</div>
   <script>
-    function toggleMenu(){document.getElementById('dropdownMenu').style.display = document.getElementById('dropdownMenu').style.display==='block'?'none':'block'}
-    function el(id){return document.getElementById(id)}
-    function submitBooking(e){e.preventDefault();alert('Booking confirmed!')}
-    function closeModal(){el('modalBackdrop').classList.remove('show')}
+    function toggleMenu(){
+      document.getElementById('dropdownMenu').style.display =
+        document.getElementById('dropdownMenu').style.display==='block'?'none':'block';
+    }
+
+    function sendToWhatsApp(e) {
+      e.preventDefault();
+      let service = document.getElementById("serviceType").value;
+      let name = document.getElementById("name").value;
+      let mobile = document.getElementById("phone").value;
+      let address = document.getElementById("address").value;
+
+      let message = `Hello SewaYatri,%0AI want to book a service.%0AService: ${service}%0AName: ${name}%0AMobile: ${mobile}%0AAddress: ${address}`;
+      let url = `https://wa.me/917667122857?text=${message}`;
+      window.open(url, '_blank').focus();
+    }
   </script>
 </body>
 </html>
