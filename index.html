@@ -1,145 +1,191 @@
 <!doctype html>
-<html lang="hi">
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  
-  <!-- SEO Title -->
-  <title>SewaYatri - Electrician & Plumber Services in Buxar</title>
-
-  <!-- SEO Description & Keywords -->
-  <meta name="description" content="SewaYatri provides electrician and plumber services in Buxar and nearby villages. Book online or call us for quick service. Cash & online payments accepted.">
-  <meta name="keywords" content="SewaYatri, electrician in Buxar, plumber in Buxar, electrician near me, plumber near me, electric repair, plumbing service, Ajit Raja">
-  <meta name="author" content="SewaYatri">
-
-  <!-- Social Media Preview (Open Graph) -->
-  <meta property="og:title" content="SewaYatri - Electrician & Plumber Services in Buxar">
-  <meta property="og:description" content="Book reliable electrician and plumber services in Buxar and nearby villages.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://sewayatri.github.io/Sewayatri/">
-  <meta property="og:image" content="https://sewayatri.github.io/Sewayatri/logo.png">
-
-  <!-- Canonical URL -->
-  <link rel="canonical" href="https://sewayatri.github.io/Sewayatri/">
-
-  <style>
-    :root{
-      --accent:#0b74db;--muted:#6b7280;--card:#ffffff;--bg:#f3f4f6;--radius:14px;
-      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Helvetica Neue', Arial;
-    }
-    *{box-sizing:border-box}html,body{height:100%;margin:0;background:#f8fafc;color:#0f172a}
-    .container{max-width:980px;margin:0 auto;padding:20px}
-    header{display:flex;gap:16px;align-items:center;justify-content:space-between}
-    .logo{display:flex;align-items:center;gap:12px}
-    .logo svg{width:50px;height:50px}
-    h1{font-size:20px;margin:0}p.lead{margin:2px 0 0;color:var(--muted)}
-    nav{position:relative}
-    .menu-btn{background:none;border:none;font-size:24px;cursor:pointer}
-    .dropdown{display:none;position:absolute;right:0;top:30px;background:var(--card);border-radius:var(--radius);box-shadow:0 4px 12px rgba(0,0,0,0.1);overflow:hidden}
-    .dropdown a{display:block;padding:10px 16px;color:#0f172a;text-decoration:none;font-size:14px}
-    .dropdown a:hover{background:#f3f4f6}
-    .grid{display:grid;grid-template-columns:1fr 380px;gap:18px;margin-top:18px}
-    @media(max-width:880px){.grid{grid-template-columns:1fr}}
-    .card{background:var(--card);border-radius:var(--radius);padding:18px;box-shadow:0 6px 20px rgba(12,15,20,0.06)}
-    .services{display:flex;flex-direction:column;gap:12px}
-    .svc{display:flex;align-items:center;gap:12px;padding:10px;border-radius:10px;border:1px solid #eef2f5}
-    .svc h3{margin:0;font-size:16px}
-    .areas{font-size:14px;color:var(--muted);margin-top:8px}
-    form label{font-size:13px;color:var(--muted);display:block;margin-bottom:6px}
-    input,select,textarea{width:100%;padding:10px;border-radius:10px;border:1px solid #e6edf3;font-size:14px}
-    button{background:var(--accent);color:#fff;border:0;padding:10px 14px;border-radius:10px;font-weight:600;cursor:pointer}
-    .small{font-size:13px;color:var(--muted)}
-    footer{margin-top:18px;text-align:center;color:var(--muted);font-size:13px}
-    .modal-backdrop{position:fixed;inset:0;background:rgba(2,6,23,0.46);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:all .18s}
-    .modal{background:var(--card);padding:18px;border-radius:14px;max-width:480px;width:92%}
-    .modal-backdrop.show{opacity:1;pointer-events:auto}
-    .toast{position:fixed;right:18px;bottom:18px;background:#0b74db;color:#fff;padding:10px 14px;border-radius:10px;display:none}
-    .toast.show{display:block}
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>SewaYatri - Electrician & Plumber Services</title>
+<link rel="manifest" href="/manifest.json" />
+<meta name="theme-color" content="#1976d2" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/4b9ba14b0a.js" crossorigin="anonymous"></script>
+<style>
+:root{--primary:#1976d2;--primary-2:#42a5f5;--accent:#ff9800;--bg:#f7fbff;--card:#fff;--text:#223;--radius:14px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+header{background:linear-gradient(90deg,var(--primary),var(--primary-2));color:white;padding:14px 20px;position:sticky;top:0;z-index:999}
+.container{max-width:1100px;margin:0 auto;padding:0 18px}
+nav{display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:700;font-size:22px;letter-spacing:0.2px}
+.menu{display:flex;gap:18px;list-style:none}
+.menu a{color:white;font-weight:600}
+.menu-toggle{display:none;font-size:22px;cursor:pointer}
+.hero{padding:70px 0;text-align:center;color:white;background:linear-gradient(90deg,var(--primary),var(--primary-2));border-bottom-left-radius:30px;border-bottom-right-radius:30px}
+.hero h1{font-size:30px;margin-bottom:10px}
+.hero p{opacity:0.95;margin-bottom:18px}
+.btn{display:inline-block;background:var(--accent);color:#fff;padding:12px 22px;border-radius:30px;font-weight:600;box-shadow:0 8px 20px rgba(0,0,0,0.12)}
+.section{padding:50px 0}
+h2{color:var(--primary);text-align:center;margin-bottom:26px;font-size:24px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:var(--card);padding:18px;border-radius:var(--radius);box-shadow:0 8px 22px rgba(31,49,68,0.06);text-align:center;border:1px solid rgba(20,30,60,0.03)}
+.card i{font-size:36px;color:var(--accent);margin-bottom:12px}
+.card h3{margin-bottom:8px}
+.card p{font-size:14px;color:#555}
+.steps{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+.step{background:linear-gradient(180deg,#fff,#fbfeff);padding:18px;border-radius:12px;min-width:160px;flex:1;text-align:center;border:1px solid rgba(20,30,60,0.03)}
+.step i{font-size:26px;color:var(--primary);margin-bottom:8px}
+.about p{max-width:900px;margin:0 auto;line-height:1.7;color:#334;text-align:center}
+.form{max-width:520px;margin:0 auto;background:var(--card);padding:18px;border-radius:12px;box-shadow:0 10px 24px rgba(20,30,60,0.06)}
+.form input,.form textarea{width:100%;padding:12px;border-radius:8px;border:1px solid #dfe7f3;margin-bottom:12px;font-size:15px}
+.muted{font-size:13px;color:#5b6b7a;text-align:center;margin-top:8px}
+.whatsapp{display:flex;justify-content:center;margin-top:12px}
+.whatsapp a{background:#25D366;color:#fff;padding:10px 16px;border-radius:25px;font-weight:600}
+footer{background:var(--primary);color:white;padding:16px;text-align:center;border-top-left-radius:20px;border-top-right-radius:20px;margin-top:30px}
+@media(max-width:820px){.hero h1{font-size:26px}.menu{display:none}.menu-toggle{display:block;color:white}}
+</style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="logo">
-        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" rx="10" fill="#0b74db"/><path d="M24 13c3 0 5.5 2.5 5.5 5.5S27 24 24 24s-5.5-2.5-5.5-5.5S21 13 24 13z" fill="#fff"/><path d="M14 34c2-4 6-7 10-7s8 3 10 7H14z" fill="#dbeafe"/></svg>
-        <div>
-          <h1>SewaYatri</h1>
-          <p class="lead">Electrician · Plumber — Buxar & nearby villages • Cash & Online</p>
-        </div>
-      </div>
-      <nav>
-        <button class="menu-btn" onclick="toggleMenu()">⋮</button>
-        <div class="dropdown" id="dropdownMenu">
-          <a href="#customer-login">Customer Login</a>
-          <a href="#service-provider-login">Service Provider Login</a>
-          <a href="#about">About</a>
-          <a href="#support">Support</a>
-        </div>
-      </nav>
-    </header>
+<header>
+<div class="container">
+<nav>
+<div class="logo">SewaYatri</div>
+<ul class="menu" id="menu">
+<li><a href="#home">Home</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#how">How it Works</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+<div class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></div>
+</nav>
+</div>
+</header>
 
-    <main class="grid">
-      <section>
-        <div class="card">
-          <h2>Hamare Services</h2>
-          <div class="services">
-            <div class="svc">🔌 <div><h3>Electrician</h3><div class="small">Wiring, switch repair, inverter, light fitting</div></div></div>
-            <div class="svc">🚰 <div><h3>Plumber</h3><div class="small">Leak fixing, taps, RO, bathroom fitting</div></div></div>
-          </div>
-          <div class="areas"><strong>Service Area:</strong> Sohani Patti, Buxar, Chausa, Itarhi, Bhojpur, Dumraon, Ahirauli, Rajpur, Sangraon.</div>
-        </div>
-      </section>
+<section id="home" class="hero">
+<div class="container">
+<h1>Electrician & Plumber Services at Your Doorstep</h1>
+<p>Fast, reliable and affordable — Buxar & nearby villages</p>
+<a href="#services" class="btn">Book Now</a>
+</div>
+</section>
 
-      <aside>
-        <div class="card">
-          <h3>Book a Service</h3>
-          <form id="bookingForm" onsubmit="sendToWhatsApp(event)">
-            <label>Service</label>
-            <select id="serviceType" required>
-              <option value="">— Select —</option>
-              <option value="Electrician">Electrician</option>
-              <option value="Plumber">Plumber</option>
-            </select>
-            <label>Full name</label>
-            <input id="name" placeholder="Enter your name" autocomplete="off" required />
-            <label>Mobile number</label>
-            <input id="phone" placeholder="Enter your mobile number" pattern="[0-9]{10,13}" autocomplete="off" required />
-            <label>Address / Village</label>
-            <input id="address" placeholder="Enter your address" autocomplete="off" required />
-            <button type="submit">Confirm Booking</button>
-          </form>
-        </div>
-        <div class="card">
-          <h4>Contact</h4>
-          <div class="small">Owner: Ajit Raja</div>
-          <div style="margin-top:8px;display:flex;gap:8px">
-            <a href="tel:+917667122857"><button style="background:#10b981">Call</button></a>
-            <a href="https://wa.me/917667122857" target="_blank"><button style="background:#25D366">WhatsApp</button></a>
-          </div>
-        </div>
-      </aside>
-    </main>
+<section id="services" class="section">
+<div class="container">
+<h2>Our Services</h2>
+<div class="grid">
+<div class="card"><i class="fas fa-bolt"></i><h3>Electrician</h3><p>Wiring, repairs, installation, switchboard, fans & lights.</p><button class="btn" onclick="openBooking('Electrician')">Book Service</button></div>
+<div class="card"><i class="fas fa-tint"></i><h3>Plumber</h3><p>Leak fix, pipe work, bathroom/kitchen installations.</p><button class="btn" onclick="openBooking('Plumber')">Book Service</button></div>
+<div class="card"><i class="fas fa-tools"></i><h3>General Repairs</h3><p>Doors, windows, fittings, handyman services.</p><button class="btn" onclick="openBooking('General Repairs')">Book Service</button></div>
+</div>
+</div>
+</section>
 
-    <footer>© SewaYatri — Local service booking</footer>
-  </div>
+<section id="how" class="section" style="background:transparent">
+<div class="container">
+<h2>How it Works</h2>
+<div class="steps">
+<div class="step"><i class="fas fa-hand-pointer"></i><div style="font-weight:700;margin:8px 0;">Book Service</div><div class="muted">Tell us your problem</div></div>
+<div class="step"><i class="fas fa-user-cog"></i><div style="font-weight:700;margin:8px 0;">We Assign</div><div class="muted">We send a pro within 24 hours</div></div>
+<div class="step"><i class="fas fa-briefcase"></i><div style="font-weight:700;margin:8px 0;">Work Done</div><div class="muted">Quality and guarantee</div></div>
+<div class="step"><i class="fas fa-rupee-sign"></i><div style="font-weight:700;margin:8px 0;">Pay</div><div class="muted">Cash or online — your choice</div></div>
+</div>
+</div>
+</section>
 
-  <script>
-    function toggleMenu(){
-      document.getElementById('dropdownMenu').style.display =
-        document.getElementById('dropdownMenu').style.display==='block'?'none':'block';
-    }
+<section id="about" class="section">
+<div class="container">
+<h2>About Us</h2>
+<div class="about">
+<p>SewaYatri is a local service startup from Buxar. Humara mission simple hai — reliable, fast aur affordable repair services laana, jisse aapko kahin aur dhoondhne ki zarurat na pade. Hum trained professionals bhejte hain aur har kaam ke baad feedback lete hain.</p>
+</div>
+</div>
+</section>
 
-    function sendToWhatsApp(e) {
-      e.preventDefault();
-      let service = document.getElementById("serviceType").value;
-      let name = document.getElementById("name").value;
-      let mobile = document.getElementById("phone").value;
-      let address = document.getElementById("address").value;
+<section id="contact" class="section" style="padding-bottom:60px">
+<div class="container">
+<h2>Contact & Book</h2>
 
-      let message = `Hello SewaYatri,%0AI want to book a service.%0AService: ${service}%0AName: ${name}%0AMobile: ${mobile}%0AAddress: ${address}`;
-      let url = `https://wa.me/917667122857?text=${message}`;
-      window.open(url, '_blank').focus();
-    }
-  </script>
+<!-- Booking Modal -->
+<div id="bookingModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.45);align-items:center;justify-content:center;z-index:9999">
+<div style="background:white;border-radius:12px;padding:18px;max-width:420px;width:92%;box-shadow:0 20px 40px rgba(0,0,0,0.3)">
+<h3 id="bookingTitle" style="margin-bottom:8px">Book Service</h3>
+<form id="bookingForm">
+<input type="text" id="bk_name" placeholder="Your name" required />
+<input type="tel" id="bk_phone" placeholder="Phone (10 digits)" required />
+<input type="text" id="bk_service" readonly />
+<textarea id="bk_address" placeholder="Address / Short description" style="min-height:90px" required></textarea>
+<div style="display:flex;gap:10px;margin-top:8px;justify-content:flex-end">
+<button type="button" onclick="closeBooking()" style="background:#eee;padding:10px 14px;border-radius:8px">Cancel</button>
+<button type="submit" class="btn">Send Request</button>
+</div>
+</form>
+<div style="font-size:13px;color:#666;margin-top:8px">Aapko aur hamare team ko confirmation message milega. Hum 24 hours ke andar contact karenge.</div>
+</div>
+</div>
+
+<div class="form" style="margin-top:18px">
+<form id="contactForm">
+<input id="name" type="text" placeholder="Full name" required />
+<input id="phone" type="tel" placeholder="Phone (10 digits)" required />
+<textarea id="message" placeholder="How can we help you?" required></textarea>
+<div style="text-align:center">
+<button type="submit" class="btn">Send Request</button>
+</div>
+</form>
+
+<div class="whatsapp" style="margin-top:14px">
+<a id="waLink" href="https://wa.me/917667122857?text=Hello%20SewaYatri%20I%20need%20service" target="_blank">Chat on WhatsApp</a>
+</div>
+</div>
+</div>
+
+<footer>
+<div class="container">
+<div style="display:flex;flex-direction:column;gap:8px;align-items:center">
+<div>&copy; <span id="yr"></span> SewaYatri</div>
+<div style="font-size:13px;opacity:0.95">Designed for Buxar and nearby villages • All rights reserved • Email: sewayatri57@gmail.com</div>
+</div>
+</div>
+</footer>
+
+<script>
+document.getElementById('yr').innerText = new Date().getFullYear();
+const menuToggle = document.getElementById('menuToggle');
+const menu = document.getElementById('menu');
+menuToggle && menuToggle.addEventListener('click', ()=> {
+menu.classList.toggle('open');
+if(menu.style.display==='flex')menu.style.display='none'; else menu.style.display='flex';menu.style.flexDirection='column';menu.style.background='transparent';
+});
+function openBooking(service){
+document.getElementById('bk_service').value=service;
+document.getElementById('bookingTitle').innerText="Book: "+service;
+document.getElementById('bookingModal').style.display='flex';
+window.scrollTo({top:0,behavior:'smooth'});
+}
+function closeBooking(){
+document.getElementById('bookingModal').style.display='none';
+document.getElementById('bookingForm').reset();
+}
+document.getElementById('bookingForm').addEventListener('submit', function(e){
+e.preventDefault();
+const name=document.getElementById('bk_name').value.trim();
+const phone=document.getElementById('bk_phone').value.trim();
+const service=document.getElementById('bk_service').value.trim();
+const address=document.getElementById('bk_address').value.trim();
+alert("Thanks "+name+"! Your booking for "+service+" is received. Our team will contact you within 24 hours.");
+window.open("https://wa.me/"+phone.replace(/\D/g,'')+"?text="+encodeURIComponent("Thanks for booking "+service+" with SewaYatri. Our team will contact you within 24 hours."),"_blank");
+closeBooking();
+});
+document.getElementById('contactForm').addEventListener('submit',function(e){
+e.preventDefault();
+const name=document.getElementById('name').value.trim();
+const phone=document.getElementById('phone').value.trim();
+const message=document.getElementById('message').value.trim();
+alert("Thanks "+name+"! Your message is received. Our team will contact you within 24 hours.");
+window.open("https://wa.me/"+phone.replace(/\D/g,'')+"?text="+encodeURIComponent("Thanks "+name+"! We received your message. Our team will contact you within 24 hours."),"_blank");
+document.getElementById('contactForm').reset();
+});
+if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('/service-worker.js').then(()=>{console.log('SW registered');}).catch(err=>console.log('SW register failed',err));})}
+</script>
 </body>
 </html>
