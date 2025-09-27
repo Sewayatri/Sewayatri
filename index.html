@@ -137,7 +137,7 @@ footer{background:var(--primary);color:white;padding:16px;text-align:center;bord
 <a id="waLink" href="https://wa.me/917667122857?text=Hello%20SewaYatri%20I%20need%20service" target="_blank">Chat on WhatsApp</a>
 </div>
 </div>
-</div>
+</section>
 
 <footer>
 <div class="container">
@@ -152,10 +152,8 @@ footer{background:var(--primary);color:white;padding:16px;text-align:center;bord
 document.getElementById('yr').innerText = new Date().getFullYear();
 const menuToggle = document.getElementById('menuToggle');
 const menu = document.getElementById('menu');
-menuToggle && menuToggle.addEventListener('click', ()=> {
-menu.classList.toggle('open');
-if(menu.style.display==='flex')menu.style.display='none'; else menu.style.display='flex';menu.style.flexDirection='column';menu.style.background='transparent';
-});
+menuToggle && menuToggle.addEventListener('click', ()=> {menu.classList.toggle('open');if(menu.style.display==='flex')menu.style.display='none'; else menu.style.display='flex';menu.style.flexDirection='column';menu.style.background='transparent';});
+
 function openBooking(service){
 document.getElementById('bk_service').value=service;
 document.getElementById('bookingTitle').innerText="Book: "+service;
@@ -166,25 +164,32 @@ function closeBooking(){
 document.getElementById('bookingModal').style.display='none';
 document.getElementById('bookingForm').reset();
 }
+
 document.getElementById('bookingForm').addEventListener('submit', function(e){
 e.preventDefault();
 const name=document.getElementById('bk_name').value.trim();
 const phone=document.getElementById('bk_phone').value.trim();
 const service=document.getElementById('bk_service').value.trim();
 const address=document.getElementById('bk_address').value.trim();
+const countryCode="91";
+const phoneNumber=phone.replace(/\D/g,'');
 alert("Thanks "+name+"! Your booking for "+service+" is received. Our team will contact you within 24 hours.");
-window.open("https://wa.me/"+phone.replace(/\D/g,'')+"?text="+encodeURIComponent("Thanks for booking "+service+" with SewaYatri. Our team will contact you within 24 hours."),"_blank");
+window.open("https://wa.me/"+countryCode+phoneNumber+"?text="+encodeURIComponent("Thanks for booking "+service+" with SewaYatri. Our team will contact you within 24 hours."),"_blank");
 closeBooking();
 });
+
 document.getElementById('contactForm').addEventListener('submit',function(e){
 e.preventDefault();
 const name=document.getElementById('name').value.trim();
 const phone=document.getElementById('phone').value.trim();
 const message=document.getElementById('message').value.trim();
+const countryCode="91";
+const phoneNumber=phone.replace(/\D/g,'');
 alert("Thanks "+name+"! Your message is received. Our team will contact you within 24 hours.");
-window.open("https://wa.me/"+phone.replace(/\D/g,'')+"?text="+encodeURIComponent("Thanks "+name+"! We received your message. Our team will contact you within 24 hours."),"_blank");
+window.open("https://wa.me/"+countryCode+phoneNumber+"?text="+encodeURIComponent("Thanks "+name+"! We received your message. Our team will contact you within 24 hours."),"_blank");
 document.getElementById('contactForm').reset();
 });
+
 if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('/service-worker.js').then(()=>{console.log('SW registered');}).catch(err=>console.log('SW register failed',err));})}
 </script>
 </body>
